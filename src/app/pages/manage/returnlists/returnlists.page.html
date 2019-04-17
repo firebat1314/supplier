@@ -1,0 +1,33 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/manage"></ion-back-button>
+      </ion-buttons>
+      <ion-title>退货单</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新中..."></ion-refresher-content>
+        </ion-refresher>
+    <div class="returnlist">
+        <div *ngFor="let order of orderList" class="returnedgoods">
+            <p class="returnedgoods_ordernumber"><span>订单编号：{{order.order_sn}}</span><span class="order_tuihuo">{{order.return_type}}</span></p>
+            <p *ngFor="let ordergoods of order.goods" class="ordergoods"   [ngClass]="{'text-success':ordergoods.goods_thumb.length == 0}">
+              <img src="{{ordergoods.goods_thumb}}" alt="" class="ordergoodsimg">
+            <span class="ordergoodsimg_name">{{ordergoods.goods_name}}</span>
+            </p>
+          <p [routerLink]="['/manage/Refunddetails',order.return_id]" class="orderstatus orderstatus_wancheng" *ngIf="order.return_status==10 ||order.return_status==-1"><ion-icon name="checkmark-circle"></ion-icon><span>{{order.status}}</span><span></span> <span style="    position: absolute;  right: 3px;">  <ion-icon style="font-size: 16px;color: #808080;" src="./assets/icons/svg/right-w.svg"></ion-icon></span></p>
+          <p [routerLink]="['/manage/Refunddetails',order.return_id]" class="orderstatus orderstatus_shenqing" *ngIf="order.return_status!=10 && order.return_status!=-1"><img src="../../../../assets/icons/clock_2.png" alt=""><span>{{order.status}}</span>  <span class="orderstatus__shenqing_tiaozhuan" style=" position: absolute;  right: 20px;">  <ion-icon style="font-size: 16px;" src="./assets/icons/svg/right-w.svg"></ion-icon></span>
+          <!-- <p></p> -->
+          </p>
+          <!-- {{order.return_id}} -->
+          <div class="orderlooks"><button [routerLink]="['/manage/Refunddetails',order.return_id]">查看</button></div>
+         </div>
+    </div>
+    <!-- <s-scroll-to-top slot="fixed"></s-scroll-to-top> -->
+    <ion-infinite-scroll threshold="400px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    </ion-content>  

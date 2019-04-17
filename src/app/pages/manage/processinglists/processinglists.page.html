@@ -1,0 +1,35 @@
+<ion-header translucent>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/manage"></ion-back-button>
+      </ion-buttons>
+      <ion-title>来镜加工</ion-title>
+    </ion-toolbar>
+   
+  </ion-header>
+  
+  <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新中..."></ion-refresher-content>
+    </ion-refresher>
+    <div class="body_color">
+    
+        <div *ngFor="let order of orderList" class="numberformirror_content">
+            <p class="numberformirror">来镜加工单号{{order.sn}}</p> 
+          <div *ngFor="let piangoods of order.pian_goods" class="numberformirror_piangoods">
+          <p class="numberformirror_piangoods_img">
+            <img src="{{piangoods.goods_img}}" alt="">
+          </p>
+            <p class="numberformirror_piangoods_left"> 商品编号：{{piangoods.goods_id}}</p>
+           <p class="numberformirror_piangoods_left">商品名称：{{piangoods.goods_name}}</p>  
+             <p class="numberformirror_piangoods_left">数量：{{piangoods.goods_number}}</p>
+          </div>
+          <p class="numberformirror_btn"><button [routerLink]="['/manage/Detailsfinishing',order.mid]">查看</button></p> 
+          </div>
+    </div>
+    <s-scroll-to-top slot="fixed"></s-scroll-to-top>
+  
+    <ion-infinite-scroll threshold="400px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载..."></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    </ion-content>

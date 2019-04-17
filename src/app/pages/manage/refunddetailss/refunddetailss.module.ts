@@ -3,14 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { IonicModule } from '@ionic/angular';
-
-import { OrderListDPage } from './order-list-d.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { IonicModule } from '@ionic/angular';
+import { SharedModule } from 'src/app/shared.module';
+
+import { RefunddetailssPage } from './refunddetailss.page';
+import { share } from 'rxjs/operators';
+
 const routes: Routes = [
   {
     path: '',
-    component: OrderListDPage
+    component: RefunddetailssPage
   }
 ];
 
@@ -20,8 +23,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ComponentsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
-  declarations: [OrderListDPage]
+  declarations: [RefunddetailssPage]
 })
-export class OrderListDPageModule { }
+export class RefunddetailssPageModule {}

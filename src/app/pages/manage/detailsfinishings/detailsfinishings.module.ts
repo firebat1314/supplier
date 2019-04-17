@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-
-import { OrderListDPage } from './order-list-d.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { DetailsfinishingsPage } from './detailsfinishings.page';
+import { SharedModule } from 'src/app/shared.module';
+
 const routes: Routes = [
   {
     path: '',
-    component: OrderListDPage
+    component: DetailsfinishingsPage
   }
 ];
 
@@ -20,8 +21,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ComponentsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedModule
   ],
-  declarations: [OrderListDPage]
+  declarations: [DetailsfinishingsPage]
 })
-export class OrderListDPageModule { }
+export class DetailsfinishingsPageModule {}

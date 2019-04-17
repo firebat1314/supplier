@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
+import { ComponentsModule } from 'src/app/components/components.module';
 import { IonicModule } from '@ionic/angular';
 
-import { OrderListDPage } from './order-list-d.page';
-import { ComponentsModule } from 'src/app/components/components.module';
+import { ProcessinglistsPage } from './processinglists.page';
+
 const routes: Routes = [
   {
     path: '',
-    component: OrderListDPage
+    component: ProcessinglistsPage
   }
 ];
 
@@ -22,6 +22,6 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [OrderListDPage]
+  declarations: [ProcessinglistsPage]
 })
-export class OrderListDPageModule { }
+export class ProcessinglistsPageModule {}

@@ -29,7 +29,14 @@ const routes: Routes = [
   },
   { path: 'scan', loadChildren: './scan/scan.module#ScanPageModule' },
   { path: '404', loadChildren: './not-found/not-found.module#NotFoundPageModule' },
+  { path: 'processinglists', loadChildren: './manage/processinglists/processinglists.module#ProcessinglistsPageModule' },
+  { path: 'refunddetailss', loadChildren: './manage/refunddetailss/refunddetailss.module#RefunddetailssPageModule' },
+  { path: 'returnlists', loadChildren: './manage/returnlists/returnlists.module#ReturnlistsPageModule' },
+  { path: 'detailsfinishings', loadChildren: './manage/detailsfinishings/detailsfinishings.module#DetailsfinishingsPageModule' },
   { path: '**', redirectTo: '/404' },
+
+  // { path: 'refunddetailss', loadChildren: './manage/refunddetailss/refunddetailss.module#RefunddetailssPageModule' },
+
 
 ];
 @NgModule({

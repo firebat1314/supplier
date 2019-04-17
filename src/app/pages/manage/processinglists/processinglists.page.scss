@@ -1,0 +1,66 @@
+.body_color{
+    background: #f5f5f5;
+    overflow: hidden;
+}
+.numberformirror_content{
+background: white;
+margin: 10px;
+}
+.numberformirror{
+   height: 41px;
+   line-height: 41px;
+   padding-left: 10px;
+   color: #666;
+   border-bottom: 1px solid #e0e0e0;
+}
+.numberformirror_money{
+    height: 40px;
+    line-height: 40px;
+    float: right;
+    margin-right: 10px;
+}
+.numberformirror_top{
+    height: 10px;
+}
+.numberformirror_btn{
+    height: 65px;
+    padding-top: 15px;
+    padding-right: 10px;
+    border-top: 1px dashed #e0e0e0;
+}
+.numberformirror_btn button{
+    background: white;
+    width: 70px;
+    height: 35px;
+    border-radius: 8px;
+    float: right;
+    border:1px solid #808080;
+    color: #808080;
+}
+.numberformirror_money_box{
+    border-top: 1px dashed #e0e0e0;
+    border-bottom: 1px dashed #e0e0e0;
+    height: 40px;
+    line-height: 40px;        
+}
+.numberformirror_piangoods .numberformirror_piangoods_img{
+    width: 65px;
+    height: 65px;
+    float: left;
+}
+.numberformirror_piangoods{
+    height:80px;padding-left: 16px;
+    padding-top: 10px
+}
+.numberformirror_piangoods_left{
+    line-height: 20px;
+    padding-left: 20px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+.numberformirror_money_big{
+  font-weight: bold;
+}

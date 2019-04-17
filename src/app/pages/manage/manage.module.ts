@@ -7,7 +7,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { ManagePage } from './manage.page';
 import { SharedModule } from 'src/app/shared.module';
-
+// import { ProcessinglistComponent } from './processinglist/processinglist.component';
+// import { ReturnlistComponent } from './returnlist/returnlist.component';
+// import { RefunddetailsComponent } from './refunddetails/refunddetails.component';
+// import { DetailsfinishingComponent } from './detailsfinishing/detailsfinishing.component';
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +29,18 @@ const routes: Routes = [
   {
     path: 'order-info-d/:id',
     loadChildren: './order-list-d/order-info-d/order-info-d.module#OrderInfoDPageModule'
+  },{
+    path:'processinglists',
+    loadChildren:'./processinglists/processinglists.module#ProcessinglistsPageModule'
+  },{
+    path:'Returnlist',
+    loadChildren:'./returnlists/returnlists.module#ReturnlistsPageModule'
+  },{
+    path: 'Refunddetails/:id',
+    loadChildren:'./refunddetailss/refunddetailss.module#RefunddetailssPageModule'
+  },{
+    path:'Detailsfinishing/:mid',
+    loadChildren:'./detailsfinishings/detailsfinishings.module#DetailsfinishingsPageModule'
   },
   { path: 'ship-order', loadChildren: './ship-order/ship-order.module#ShipOrderPageModule' },
   { path: 'ship-order-info/:id', loadChildren: './ship-order-info/ship-order-info.module#ShipOrderInfoPageModule' },

@@ -97,6 +97,7 @@ export class OrderListPage implements OnInit {
     this.getData();
   }
   prepare(order) {
+    debugger
     this.httpServ.prepare({
       id: order.id
     }).subscribe(res => {
